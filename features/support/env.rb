@@ -5,7 +5,8 @@ require 'capybara/dsl'
 require 'capybara-screenshot'
 
 Capybara.default_driver = :chrome
-
+Capybara.javascript_driver = :chrome
+Capybara.default_max_wait_time = 20
 
 options = Selenium::WebDriver::Chrome::Options.new
 options.add_preference(:download, prompt_for_download: false,
@@ -40,5 +41,3 @@ Capybara.register_driver :headless_chrome do |app|
 
   driver
 end
-
-Capybara.javascript_driver = ENV['GUI'] ? :chrome : :headless_chrome

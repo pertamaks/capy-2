@@ -14,16 +14,19 @@ Given(/^User go to paket data page$/) do
 end
 
 And(/^User enter the phone number$/) do
-  #expect(page).to have_title('Jual Paket Data All Operator - Kuota Internet Harga Murah | Blibli.com')
+  # expect(page).to have_title('Jual Paket Data All Operator - Kuota Internet Harga Murah | Blibli.com')
   within('#blibli-main-ctrl > section.content-section.relocate-header > div > div:nth-child(3) > div > div > div.form > div.form__input-wrapper > div.form__input.relative') do
     fill_in('contoh: 081234567890', with: '08137382789')
-
   end
-  sleep(3)
+  expect(page).to have_css('.form__product-wrapper')
+  #find('#blibli-main-ctrl > section.content-section.relocate-header > div > div:nth-child(3) > div > div > div.form > div.form__input-wrapper > div.form__label').click
+  #sleep(10)
 end
 
 And(/^User select the paket data$/) do
-    choose('Data 50.000')
+  within('.form__product-wrapper') do
+    page.find('.form__product-wrapper > div > div:nth-child(3)').click
+  end
 end
 
 And(/^User click beli sekarang$/) do
@@ -31,5 +34,5 @@ And(/^User click beli sekarang$/) do
 end
 
 Then(/^Quick register form will appear$/) do
-  page.should have_css('.quick-register')
+  expect(page).to have_css('#blibli-main-ctrl > section.content-section.relocate-header > div > div:nth-child(3) > div > div > div.quick-register')
 end
