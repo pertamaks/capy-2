@@ -2,11 +2,12 @@ require 'capybara/cucumber'
 require 'selenium-webdriver'
 require 'capybara/session'
 require 'capybara/dsl'
-require 'capybara-screenshot'
+require 'capybara-screenshot/cucumber'
 
 Capybara.default_driver = :chrome
 Capybara.javascript_driver = :chrome
 Capybara.default_max_wait_time = 20
+Capybara.save_path = "E:\\GIT AUTO\\capy 2\\screenshot"
 
 options = Selenium::WebDriver::Chrome::Options.new
 options.add_preference(:download, prompt_for_download: false,

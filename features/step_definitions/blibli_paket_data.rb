@@ -18,9 +18,6 @@ And(/^User enter the phone number$/) do
   within('#blibli-main-ctrl > section.content-section.relocate-header > div > div:nth-child(3) > div > div > div.form > div.form__input-wrapper > div.form__input.relative') do
     fill_in('contoh: 081234567890', with: '08137382789')
   end
-  expect(page).to have_css('.form__product-wrapper')
-  #find('#blibli-main-ctrl > section.content-section.relocate-header > div > div:nth-child(3) > div > div > div.form > div.form__input-wrapper > div.form__label').click
-  #sleep(10)
 end
 
 And(/^User select the paket data$/) do
