@@ -1,1 +1,3 @@
-default: --color -f pretty -t @blibli_pktdata
+default: --color -f pretty
+blili: --color -f pretty -t @blibli_pktdata
+gotix: --color -f pretty -t @tix_trail
