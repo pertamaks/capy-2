@@ -1,0 +1,25 @@
+Using the default profile...
+[36m@blibli[0m
+Feature: This feature make user can buy paket data from the blibli homepage
+
+  Background: User enter the blibli webpage[90m # features/blibli_paket_data.feature:4[0m
+    [32mGiven User enter the blibli[90m             # features/step_definitions/blibli_paket_data.rb:1[0m[0m
+    [31mThen user reach blibli homepage[90m         # features/step_definitions/blibli_paket_data.rb:5[0m[0m
+[31m      expected "Access Denied" to include "Online Mall Blibli.com, Sensasi Belanja Online Shop ala Mall" (RSpec::Expectations::ExpectationNotMetError)[0m
+[31m      ./features/step_definitions/blibli_paket_data.rb:6:in `/^user reach blibli homepage$/'[0m
+[31m      features/blibli_paket_data.feature:6:in `Then user reach blibli homepage'[0m
+
+  [36m@blibli_pktdata[0m
+  Scenario: User open the paket data menu and buy paket data[90m # features/blibli_paket_data.feature:9[0m
+    [36mGiven User go to paket data page[90m                         # features/step_definitions/blibli_paket_data.rb:9[0m[0m
+    [36mAnd User enter the phone number[90m                          # features/step_definitions/blibli_paket_data.rb:16[0m[0m
+    [36mAnd User select the paket data[90m                           # features/step_definitions/blibli_paket_data.rb:23[0m[0m
+    [36mAnd User click beli sekarang[90m                             # features/step_definitions/blibli_paket_data.rb:29[0m[0m
+    [36mThen Quick register form will appear[90m                     # features/step_definitions/blibli_paket_data.rb:33[0m[0m
+
+[31mFailing Scenarios:[0m
+[31mcucumber features/blibli_paket_data.feature:9[0m[90m # Scenario: User open the paket data menu and buy paket data[0m
+
+1 scenario ([31m1 failed[0m)
+7 steps ([31m1 failed[0m, [36m5 skipped[0m, [32m1 passed[0m)
+0m22.665s

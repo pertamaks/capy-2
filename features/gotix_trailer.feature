@@ -1,3 +1,4 @@
+@tix
 Feature: User can see the movies trailer
   Background: User enter the gotix website
     Given User enter the Gotix website

@@ -21,7 +21,7 @@ And(/^User enter the phone number$/) do
 end
 
 And(/^User select the paket data$/) do
-  within('.form__product-wrapper') do
+  within('.form__product-wrapper')do
     page.find('.form__product-wrapper > div > div:nth-child(3)').click
   end
 end

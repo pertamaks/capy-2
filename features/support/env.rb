@@ -9,6 +9,9 @@ Capybara.default_driver = :chrome
 Capybara.javascript_driver = :chrome
 Capybara.default_max_wait_time = 20
 Capybara.save_path = "E:\\GIT AUTO\\capy 2\\screenshot"
+Capybara.exact = true
+Capybara.match = :prefer_exact
+
 
 #handler set-up
 options = Selenium::WebDriver::Chrome::Options.new
@@ -43,4 +46,9 @@ Capybara.register_driver :headless_chrome do |app|
   ###
 
   driver
+end
+
+# The driver name should match the Capybara driver config name.
+Capybara::Screenshot.register_driver(:chrome) do |driver, path|
+  driver.browser.save_screenshot path
 end

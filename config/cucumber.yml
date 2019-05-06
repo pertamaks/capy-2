@@ -1,0 +1,1 @@
+default: --color -f pretty -t @blibli_pktdata
