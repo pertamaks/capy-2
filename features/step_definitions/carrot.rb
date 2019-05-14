@@ -7,7 +7,8 @@ When("user enter the username and password") do
     fill_in('username', with: 'andreas_ap634')
     fill_in('password', with: "\"S4m4r1nd4'")
   end
-  click_button('Sign in')
+  #binding.pry
+  find('body > div > div > div > div > div > form > button').click
 end
 
 Then("user can successfully login") do

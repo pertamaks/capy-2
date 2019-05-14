@@ -3,10 +3,11 @@ require 'selenium-webdriver'
 require 'capybara/session'
 require 'capybara/dsl'
 require 'capybara-screenshot/cucumber'
+require 'pry'
 
 #handler
 Capybara.default_driver = :chrome
-Capybara.javascript_driver = :chrome
+Capybara.javascript_driver = :headless_chrome
 Capybara.default_max_wait_time = 20
 Capybara.save_path = "E:\\GIT AUTO\\capy 2\\screenshot"
 Capybara.exact = true

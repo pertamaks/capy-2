@@ -1,0 +1,180 @@
+[
+  {
+    "uri": "features/blibli_paket_data.feature",
+    "id": "this-feature-make-user-can-buy-paket-data-from-the-blibli-homepage",
+    "keyword": "Feature",
+    "name": "This feature make user can buy paket data from the blibli homepage",
+    "description": "",
+    "line": 2,
+    "tags": [
+      {
+        "name": "@blibli",
+        "line": 1
+      }
+    ],
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "User enter the blibli webpage",
+        "description": "",
+        "line": 4,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-3.19.1/lib/capybara/cucumber.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22277
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.19.1/lib/capybara/cucumber.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 20012
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.22/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6796
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "User enter the blibli",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/blibli_paket_data.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28909786002
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "user reach blibli homepage",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/blibli_paket_data.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11046897
+            }
+          }
+        ]
+      },
+      {
+        "id": "this-feature-make-user-can-buy-paket-data-from-the-blibli-homepage;user-open-the-paket-data-menu-and-buy-paket-data",
+        "keyword": "Scenario",
+        "name": "User open the paket data menu and buy paket data",
+        "description": "",
+        "line": 9,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@blibli",
+            "line": 1
+          },
+          {
+            "name": "@blibli_pktdata",
+            "line": 8
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "User go to paket data page",
+            "line": 10,
+            "match": {
+              "location": "features/step_definitions/blibli_paket_data.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 248222347
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "User enter the phone number",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/blibli_paket_data.rb:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19601715503
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "User select the paket data",
+            "line": 12,
+            "match": {
+              "location": "features/step_definitions/blibli_paket_data.rb:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11036938405
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "User click beli sekarang",
+            "line": 13,
+            "match": {
+              "location": "features/step_definitions/blibli_paket_data.rb:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 141952080
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Quick register form will appear",
+            "line": 14,
+            "match": {
+              "location": "features/step_definitions/blibli_paket_data.rb:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19027755249
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.22/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 31339
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.19.1/lib/capybara/cucumber.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 496961981
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
