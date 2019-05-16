@@ -21,8 +21,14 @@ And(/^User enter the phone number$/) do
 end
 
 And(/^User select the paket data$/) do
+  @retry = 0
+  begin
+  @retry += 1
   within('.form__product-wrapper') do
     page.find('.form__product-wrapper > div > div:nth-child(6)').click
+  end
+  rescue Capybara::ElementNotFound
+    retry if @retry <= 5
   end
 end
 
@@ -36,6 +42,6 @@ Then(/^Quick register form will appear$/) do
   @retry += 1
   expect(page).to have_css('#blibli-main-ctrl > section.content-section.relocate-header > div > div:nth-child(3) > div > div > div.quick-register')
   rescue RSpec::Expectations::ExpectationNotMetError
-    retry if @retry <= 3
+    retry if @retry <= 5
 end
 end
