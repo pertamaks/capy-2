@@ -4,8 +4,8 @@ end
 
 When("user enter the username and password") do
   within('.form-signin') do
-    fill_in('username', with: 'andreas_ap634')
-    fill_in('password', with: "\"S4m4r1nd4'")
+    fill_in('username', with: 'username')
+    fill_in('password', with: "password")
   end
   #binding.pry
   find('body > div > div > div > div > div > form > button').click

@@ -5,16 +5,15 @@ require 'capybara/dsl'
 require 'capybara-screenshot/cucumber'
 require 'pry'
 
-#handler
-Capybara.default_driver = :remote_fox
+# handler
+Capybara.default_driver = :chrome
 Capybara.javascript_driver = :headless_chrome
 Capybara.default_max_wait_time = 5
-Capybara.save_path = "E:\\GIT AUTO\\capy 2\\screenshot"
+Capybara.save_path = 'E:\\GIT AUTO\\capy 2\\screenshot'
 Capybara.exact = true
 Capybara.match = :prefer_exact
 
-
-#handler set-up
+# handler set-up
 options = Selenium::WebDriver::Chrome::Options.new
 options.add_preference(:download, prompt_for_download: false,
                                   default_directory: '/tmp/downloads')
@@ -59,17 +58,17 @@ end
 # remote browser
 #
 capabilities = Selenium::WebDriver::Remote::Capabilities.new
-capabilities['browserName'] = "firefox"
-# capabilities['version'] = ""
-# capabilities['platform'] = “Windows”
-capabilities['video'] = "True"
+capabilities['browserName'] = 'firefox'
+capabilities['version'] = ''
+# capabilities['platform'] = “Linux”
+capabilities['video'] = 'True'
 
 Capybara.register_driver :remote_fox do |app|
   client = Selenium::WebDriver::Remote::Http::Default.new
-  client.timeout = 1200 #seconds
-  
+  client.timeout = 1200 # seconds
+
   Capybara::Selenium::Driver.new(app, http_client: client,
-    :browser => :remote,
-    :url => "http://localhost:4444/wd/hub",
-    :desired_capabilities => capabilities)
+                                      browser: :remote,
+                                      url: 'http://localhost:4444/wd/hub',
+                                      desired_capabilities: capabilities)
 end
