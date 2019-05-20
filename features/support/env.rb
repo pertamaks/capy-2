@@ -7,7 +7,7 @@ require 'pry'
 
 module Browser
   # handler
-  @browser = :remote_fox
+  @browser = :firefox
   Capybara.default_driver = @browser
   # Capybara.javascript_driver = :headless_chrome
   Capybara.default_max_wait_time = 5
@@ -21,6 +21,7 @@ module Browser
   # Driver Chrome
   opt_chrome = Selenium::WebDriver::Chrome::Options.new
   opt_chrome.add_preference(:download, prompt_for_download: false, default_directory: '/tmp/downloads',)
+  opt_chrome.add_argument('--window-size=1024,700')
 
   opt_chrome.add_preference(:browser, set_download_behavior: { behavior: 'allow' })
 
@@ -29,9 +30,11 @@ module Browser
   end
 
   # Driver Firefox
-  opt_fox = Selenium::WebDriver::Chrome::Options.new
-  opt_fox.add_preference(:download, prompt_for_download: false, default_directory: '/tmp/downloads', marionette: true)
-  opt_fox.add_preference(:browser, set_download_behavior: { behavior: 'allow' })
+  opt_fox = Selenium::WebDriver::Firefox::Options.new
+  # opt_fox.add_preference(:download, prompt_for_download: false, default_directory: '/tmp/downloads', marionette: true)
+  # opt_fox.add_preference(:browser, set_download_behavior: { behavior: 'allow' })
+  opt_fox.add_argument('--width=1024')
+  opt_fox.add_argument('--height=700')
 
   Capybara.register_driver :firefox do |app|
     Capybara::Selenium::Driver.new(app, browser: :firefox, options: opt_fox)
