@@ -1,0 +1,153 @@
+[
+  {
+    "uri": "features/jenius.feature",
+    "id": "user-can-browse-inside-the-webpage",
+    "keyword": "Feature",
+    "name": "User can browse inside the webpage",
+    "description": "",
+    "line": 2,
+    "tags": [
+      {
+        "name": "@jenius",
+        "line": 1
+      }
+    ],
+    "elements": [
+      {
+        "keyword": "Background",
+        "name": "User landed in the homepage",
+        "description": "",
+        "line": 4,
+        "type": "background",
+        "before": [
+          {
+            "match": {
+              "location": "capybara-3.20.2/lib/capybara/cucumber.rb:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21900
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.20.2/lib/capybara/cucumber.rb:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19634
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.22/lib/capybara-screenshot/cucumber.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7929
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3546225084
+            }
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "user goto the website",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/jenius.rb:1"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 22103633343
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "user change the language from \"EN\" to \"IND\"",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/jenius.rb:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2738965121
+            }
+          }
+        ]
+      },
+      {
+        "id": "user-can-browse-inside-the-webpage;user-scroll-to-the-bottom-of-the-homepage",
+        "keyword": "Scenario",
+        "name": "User scroll to the bottom of the homepage",
+        "description": "",
+        "line": 42,
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@jenius",
+            "line": 1
+          },
+          {
+            "name": "@wip",
+            "line": 41
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "user on the jenius homepage",
+            "line": 43,
+            "match": {
+              "location": "features/step_definitions/jenius.rb:17"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11313439
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "user sroll to see \"Saya ingin tahu\"",
+            "line": 44,
+            "match": {
+              "location": "features/step_definitions/jenius.rb:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 122296006
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "capybara-screenshot-1.0.22/lib/capybara-screenshot/cucumber.rb:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32472
+            }
+          },
+          {
+            "match": {
+              "location": "capybara-3.20.2/lib/capybara/cucumber.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 159244507
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

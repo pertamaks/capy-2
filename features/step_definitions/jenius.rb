@@ -4,8 +4,14 @@ end
 
 Then('user change the language from {string} to {string}') do |lang1, lang2|
   # binding.pry
-  page.find('a', text: lang1).click
-  expect(page).to have_text(lang2)
+  try = 0
+  begin
+    try += 1
+    page.find('a', exact_text: lang1, wait: 5).click
+    expect(page).to have_css('a', exact_text: lang2)
+  rescue RSpec::Expectations::ExpectationNotMetError
+    retry if try <= 2
+  end
 end
 
 Given('user on the jenius homepage') do
@@ -25,7 +31,7 @@ When('user change the cover animation to button {int}') do |int|
 end
 
 Then('user click on {string}') do |value|
-  page.find('a', text: value).click
+  page.find('a', exact_text: value).click
 end
 
 Then('user close the video') do
@@ -44,5 +50,5 @@ Then('user sroll to see {string}') do |value|
 
     page.execute_script(script, element.native)
   end
-  scroll_to(find('h2', text: value))
+  scroll_to(find('h2', exact_text: value))
 end
