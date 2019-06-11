@@ -1,7 +1,18 @@
 # capy-2
-Learning Capybara
+Belajar Capybara
 
-Set up first on your local directory!!
->> bundle install <<
+setup environment dulu,
+install cucumber, 
+install bundler,
 
-Don't forget to set the screenshot save path on env.rb file!!
+run bundle install/update dari direktori capy 2 untuk install gem yang diperlukan
+
+untuk path capybara screenshot silahkan diganti dengan path direktori kalian
+
+tambahkan ENV di runner yang ingin digunakan agar tidak perlu define default browser di sistem.
+>> cucumber -p wip BROWSER=CHROME ENVI=LOCAL
+list BROWSER yang tersedia ada di file env.rb dan list ENVI yang valid ada di hooks.rb
+
+yang tidak jalan:
+run script di emulator
+run scenario pas play video di jenius (gak bisa exit) pakai emulation mobile chrome

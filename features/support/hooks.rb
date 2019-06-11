@@ -4,10 +4,14 @@ Before do |scenario|
   p "Starting #{scenario}"
   if envi == :node
     Capybara.default_driver = "remote_#{env_browser_name}".downcase.to_sym
+  elsif envi == :mobile
+    Capybara.default_driver = "mobile_#{env_browser_name}".downcase.to_sym
+  elsif envi == :emu
+    Capybara.default_driver = "emu_#{env_browser_name}".downcase.to_sym
   elsif envi == :local
     Capybara.default_driver = env_browser_name.downcase.to_sym
   end
-  page.driver.browser.manage.window.resize_to(1024, 700)
+  #page.driver.browser.manage.window.resize_to(1024, 700)
 
   # code dibawah digunakan untuk setting Capybara-Screenshot gems, agar gem dapat melakukan auto save ketika ada scenario yang gagal
   # dengan menunjuk driver yang di perintahkan user ketika menjalankan command cucumber

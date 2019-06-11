@@ -1,29 +1,43 @@
 Given('user goto the website') do
-  visit 'https://www.jenius.com/en'
+  # binding.pry
+  visit 'https://www.jenius.com/en/'
 end
 
 Then('user change the language from {string} to {string}') do |lang1, lang2|
   # binding.pry
-  try = 0
-  begin
-    try += 1
+  # dibawah ini adalah contoh hybrid syntax untuk mobile dan web browser,
+  # implementasi ini diterapkan untuk seluruh syntax yang ada di jenius.rb
+  # mobile browser gunakan ENVI=EMU, sebelumnya aktifkan selenium grid dan registrasikan browser chrome ke grid.
+  if page.has_text?('GET JENIUS')
     page.find('a', exact_text: lang1, wait: 5).click
     expect(page).to have_css('a', exact_text: lang2)
-  rescue RSpec::Expectations::ExpectationNotMetError
-    retry if try <= 2
+  else
+    page.find('#mobileNavbar > div.container.position-relative > button').click
+    page.find('a', exact_text: lang2, wait: 5).click
   end
 end
 
 Given('user on the jenius homepage') do
+  # binding.pry
   expect(page).to have_title('Cara baru mengatur keuangan - Jenius')
 end
 
 When('user click menu {string}') do |value|
-  page.find('a', text: value).click
+  if page.has_text?('GET JENIUS')
+    # binding.pry
+    page.find('a', exact_text: value.upcase).click
+  else
+    page.find('#mobileNavbar > div.container.position-relative > button').click
+    page.find('a', text: value).click
+  end
 end
 
 Then('user see {string}') do |value|
-  expect(page).to have_text(value)
+  begin
+    expect(page).to have_text(value)
+  rescue RSpec::Expectations::ExpectationNotMetError
+    p "Given Text not found, Check your Text"
+  end
 end
 
 When('user change the cover animation to button {int}') do |int|
@@ -31,12 +45,22 @@ When('user change the cover animation to button {int}') do |int|
 end
 
 Then('user click on {string}') do |value|
-  page.find('a', exact_text: value).click
+  # binding.pry
+  begin
+    page.find('a', exact_text: value).click
+  rescue Capybara::ElementNotFound
+    p "Given Text not found, Check your Text"
+  end
 end
 
 Then('user close the video') do
   # binding.pry
-  find('.fancybox-toolbar', visible: false).hover.click
+  begin
+    find('body').click
+    find('.fancybox-toolbar').click
+  rescue Capybara::ElementNotFound
+    find('.fancybox-toolbar', visible: false).hover.click
+  end
   # find('button', class: 'fancybox-button.fancybox-button--close').click
 end
 

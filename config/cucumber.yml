@@ -2,3 +2,4 @@ default: --color -f pretty
 blibli: --color -f pretty -t @blibli_pktdata
 gotix: --color -f pretty -t @tix_trail
 wip: --color -f pretty -t @wip
+jenius: --color -f pretty -t @jenius
