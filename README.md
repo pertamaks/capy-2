@@ -14,5 +14,4 @@ tambahkan ENV di runner yang ingin digunakan agar tidak perlu define default bro
 list BROWSER yang tersedia ada di file env.rb dan list ENVI yang valid ada di hooks.rb
 
 yang tidak jalan:
-run script di emulator
-run scenario pas play video di jenius (gak bisa exit) pakai emulation mobile chrome
+you tell me,
